@@ -1,10 +1,12 @@
+import { UsersService } from './users.service';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 export declare class UsersController {
-    findAll(): any[];
-    findOne(id: string): {
-        id: string;
-    };
-    create(user: {}): {};
-    update(id: string, userUpdate: {}): {
-        id: string;
-    };
+    private readonly usersService;
+    constructor(usersService: UsersService);
+    create(createUserDto: CreateUserDto): string;
+    findAll(): string;
+    findOne(id: string): string;
+    update(id: string, updateUserDto: UpdateUserDto): string;
+    remove(id: string): string;
 }
